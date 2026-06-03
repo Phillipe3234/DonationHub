@@ -28,7 +28,7 @@ async function initDatabase() {
                 senha TEXT NOT NULL
             );
         `;
-        
+
         // Criar tabela para códigos de verificação OTP
         await db.sql`
             CREATE TABLE IF NOT EXISTS codigos_verificacao (
@@ -56,7 +56,7 @@ function isValidEmail(email) {
 // 1. Rota de Cadastro (Register)
 app.post('/api/auth/register', async (req, res) => {
     const { name, email, password } = req.body;
-    
+
     if (!name || !email || !password) {
         return res.status(400).json({ error: 'Preencha todos os campos obrigatórios!' });
     }
@@ -151,9 +151,9 @@ app.post('/api/auth/login', async (req, res) => {
         // Enviar o código OTP real por email para o usuário (com fallback para o terminal)
         await sendOTPEmail(email.trim(), otpCode);
 
-        res.json({ 
-            requireOtp: true, 
-            message: `Código de verificação enviado para ${email.trim()}! Verifique seu e-mail (ou o terminal do backend).` 
+        res.json({
+            requireOtp: true,
+            message: `Código de verificação enviado para ${email.trim()}! Verifique seu e-mail (ou o terminal do backend).`
         });
 
     } catch (error) {

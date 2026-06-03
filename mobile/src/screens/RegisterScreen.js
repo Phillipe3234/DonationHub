@@ -10,7 +10,8 @@ import {
   Platform, 
   ScrollView,
   ActivityIndicator,
-  Alert
+  Alert,
+  StatusBar
 } from 'react-native';
 import { FontAwesome6 } from '@expo/vector-icons';
 import { API_BASE_URL } from '../lib/config';
@@ -299,6 +300,7 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: '#f5f7ff',
+    paddingTop: Platform.OS === 'android' ? (StatusBar.currentHeight || 24) : 0,
   },
   scrollContainer: {
     flexGrow: 1,
@@ -382,6 +384,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#e2e8f0',
     gap: 10,
+    marginTop: 12,
   },
   strengthBars: {
     flexDirection: 'row',

@@ -12,8 +12,9 @@
     "@craftzdog/react-native-buffer": "^6.1.2",
     "@react-native-async-storage/async-storage": "2.2.0",
     "@sqlitecloud/drivers": "^1.0.837",
-    "expo": "~54.0.33",
+    "expo": "~54.0.0",
     "expo-clipboard": "~8.0.8",
+    "expo-modules-core": "^56.0.12",
     "expo-status-bar": "~3.0.9",
     "react": "19.1.0",
     "react-native": "0.81.5",
@@ -21,5 +22,8 @@
     "react-native-tcp-socket": "^6.4.1",
     "react-native-url-polyfill": "^3.0.0"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "babel-preset-expo": "~54.0.10"
+  }
 }
